@@ -1,7 +1,7 @@
 import UserCard from "./UserCard"
 
-const Users = ({users}) => {
-    return users.map(({id, ...user}) => <UserCard key={id} {...user} />)
+const Users = ({users, onRemove}) => {
+    return users.map(user => <UserCard key={user.id} user={user} onRemove={onRemove} />)
 }
 
 export default Users
