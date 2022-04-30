@@ -50,10 +50,8 @@ class App extends React.Component {
   }
 
   addUser = (newUser) => {
-    this.setState({isModalOpen: false})
     const updatedList = [...this.state.users, newUser];
-    console.log(updatedList)
-    this.setState({users: updatedList})
+    this.setState({users: updatedList, isModalOpen: false})
   }
 
   render() {
