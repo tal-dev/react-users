@@ -5,7 +5,6 @@ const UserCard = ({user, onRemove}) => {
             <div><strong>{first_name} {last_name}</strong></div>
             <div>{email}</div>
             <img src={avatar} alt="user-avatar"/>
-            <button className="update-btn" onClick={() => onRemove(user)}>Update</button>
             <button className="dismiss-btn" onClick={() => onRemove(user)}>Dismiss</button>
         </div>
     )

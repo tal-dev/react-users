@@ -43,17 +43,17 @@ class UserModal extends Component {
     render() {
 
         return (
-            <div className="user-modal">
+            <form action="/" className="user-modal">
                 <label htmlFor="firstname">First Name</label><br />
-                <input type="text" id="firstName" onChange={this.handleInputChange}/><br />
+                <input type="text" id="firstName" required onChange={this.handleInputChange}/><br />
                 <label htmlFor="lastName">Lasts Name</label><br />
-                <input type="text" id="lastName" onChange={this.handleInputChange}/><br />
+                <input type="text" id="lastName" required onChange={this.handleInputChange}/><br />
                 <label htmlFor="email">Email</label><br />
-                <input type="text" id="email" onChange={this.handleInputChange}/><br />
+                <input type="text" id="email" required onChange={this.handleInputChange}/><br />
                 <label for="avatar">Avatar</label><br />
-                <input type="text" id="avatar" onChange={this.handleInputChange}/><br />
+                <input type="text" id="avatar" required onChange={this.handleInputChange}/><br />
                 <input type="submit" onClick={this.prepareUserData}></input>           
-            </div>
+            </form>
         )
     }
 }
