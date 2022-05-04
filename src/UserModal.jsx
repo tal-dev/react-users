@@ -30,6 +30,11 @@ class UserModal extends Component {
     }
 
     prepareUserData = () => {
+        const {email, firstName, lastName, avatar} = this.state
+        if(!email || !firstName || !lastName || !avatar) {
+            alert("Please fill in all fields!")
+            return
+        }
         const newUser = {
             id: this.props.userId + 1,
             email: this.state.email,
@@ -52,7 +57,8 @@ class UserModal extends Component {
                 <input type="text" id="email" required onChange={this.handleInputChange}/><br />
                 <label for="avatar">Avatar</label><br />
                 <input type="text" id="avatar" required onChange={this.handleInputChange}/><br />
-                <input type="submit" onClick={this.prepareUserData}></input>           
+                <input type="submit" onClick={this.prepareUserData}></input>
+                <div className="close" onClick={this.props.onModalClose}></div>       
             </form>
         )
     }

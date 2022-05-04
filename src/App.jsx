@@ -49,6 +49,10 @@ class App extends React.Component {
     this.setState({isModalOpen: true})
   }
 
+  closeModal = () => {
+    this.setState({isModalOpen: false})
+  }
+
   addUser = (newUser) => {
     const updatedList = [...this.state.users, newUser];
     this.setState({users: updatedList, isModalOpen: false})
@@ -63,7 +67,7 @@ class App extends React.Component {
     return  (
       <div className={themeClassName}>
         <input className="searchInput" onChange={this.handleSearch} placeholder="Search" autoFocus/>
-        {isModalOpen ? <UserModal onUserAdd={this.addUser} userId={users.length} /> : 
+        {isModalOpen ? <UserModal onUserAdd={this.addUser} userId={users.length} onModalClose={this.closeModal} /> : 
           <div className='container'>
             {fileteredData.length === 0 ? "No users found" : <Users users={fileteredData} onRemove={this.removeUser} />}
           </div>} 
